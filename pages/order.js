@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "./_app";
 import { SketchPicker } from "react-color";
+import Lottie from "lottie-react";
 
 export default function Order() {
   const { cart, setCart } = useContext(CartContext);
@@ -39,6 +40,7 @@ Total:
 ${formatRupiah(total)}
     `;
 
+    // Redirect ke chat Telegram kamu
     window.location.href = `tg://resolve?domain=YourUsername&text=${encodeURIComponent(message)}`;
   };
 
@@ -48,7 +50,23 @@ ${formatRupiah(total)}
     <div style={{ padding: "20px" }}>
       <h1>View Order</h1>
       {cart.map((item, index) => (
-        <div key={index} style={{ border: "1px solid #ddd", margin: "10px 0", padding: "10px" }}>
+        <div
+          key={index}
+          style={{
+            border: "1px solid #ddd",
+            margin: "10px 0",
+            padding: "10px",
+            borderRadius: "8px"
+          }}
+        >
+          {/* Animasi Lottie Preview */}
+          <div style={{ width: 80, height: 80 }}>
+            <Lottie
+              animationData={require(`../public/${item.previewAssetId}.json`)}
+              loop
+            />
+          </div>
+
           <h3>{item.name}</h3>
           <p>{formatRupiah(item.price)}</p>
 
@@ -78,7 +96,13 @@ ${formatRupiah(total)}
 
       <button
         onClick={handlePay}
-        style={{ marginTop: "20px", background: "#4CAF50", color: "white", padding: "10px 20px" }}
+        style={{
+          marginTop: "20px",
+          background: "#4CAF50",
+          color: "white",
+          padding: "10px 20px",
+          borderRadius: "8px"
+        }}
       >
         PAY {formatRupiah(total)}
       </button>
