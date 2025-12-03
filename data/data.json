@@ -1,1 +1,42 @@
-
+{
+  "meta": {
+    "shop": "Emoji Premium",
+    "currency": "IDR",
+    "items": [
+      {
+        "id": "cookie",
+        "name": "Cookie Emoji",
+        "price": 3999,
+        "desc": "Milk’s favorite",
+        "previewAssetId": "cookie_anim"
+      },
+      {
+        "id": "flan",
+        "name": "Flan Emoji",
+        "price": 7999,
+        "desc": "Flan-tastic",
+        "previewAssetId": "flan_anim"
+      },
+      {
+        "id": "burger",
+        "name": "Burger Emoji",
+        "price": 14999,
+        "desc": "Emoji burger dengan outline tebal",
+        "previewAssetId": "burger_anim"
+      },
+      {
+        "id": "donut",
+        "name": "Donut Emoji",
+        "price": 4999,
+        "desc": "Emoji donat manis dengan glaze",
+        "previewAssetId": "donut_anim"
+      }
+    ]
+  },
+  "assets": [
+    { "id": "cookie_anim", "u": "", "p": "cookie.json", "e": 0 },
+    { "id": "flan_anim", "u": "", "p": "flan.json", "e": 0 },
+    { "id": "burger_anim", "u": "", "p": "burger.json", "e": 0 },
+    { "id": "donut_anim", "u": "", "p": "donut.json", "e": 0 }
+  ]
+}
